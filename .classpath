@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src.github-core"/>
+	<classpathentry kind="src" path="src.ant-task"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/ant.jar"/>
+	<classpathentry kind="lib" path="lib/jenkins-core-1.492.jar"/>
+	<classpathentry kind="lib" path="lib/winstone.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/plexus-utils-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/aether-api-0.9.0.M1.jar"/>
+	<classpathentry kind="lib" path="lib/aether-impl-0.9.0.M1.jar"/>
+	<classpathentry kind="lib" path="lib/aether-spi-0.9.0.M1.jar"/>
+	<classpathentry kind="lib" path="lib/aether-util-0.9.0.M1.jar"/>
+	<classpathentry kind="lib" path="lib/guava-13.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-2.1-rev7.jar"/>
+	<classpathentry kind="lib" path="lib/stapler-1.199.jar"/>
+	<classpathentry kind="lib" path="lib/stapler-jelly-1.199.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="output" path="build"/>
+</classpath>

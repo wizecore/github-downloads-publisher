@@ -1,0 +1,72 @@
+<project default="build" basedir=".">
+	<path id="runtime.classpath">
+		<fileset dir="lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="hpi"/>
+		<delete dir="build"/>
+		<delete file="github-downloads-publisher.hpi"/>
+	</target>
+
+	<target name="build">
+		<mkdir dir="build"/>
+		<javac target="1.6" destdir="build" classpathref="runtime.classpath">
+			<src path="src"/>
+			<src path="src.ant-task"/>
+			<src path="src.github-core"/>
+		</javac>			
+	</target>
+
+	<target name="hpi">
+		<delete dir="hpi"/>
+		<mkdir dir="hpi"/>
+		<mkdir dir="hpi/WEB-INF/classes"/>
+		<mkdir dir="hpi/WEB-INF/classes/META-INF"/>
+		<mkdir dir="hpi/WEB-INF/classes/META-INF/annotations"/>		
+		<mkdir dir="hpi/WEB-INF/classes"/>
+		<copy todir="hpi/WEB-INF/classes">
+			<fileset dir="src">
+				<exclude name="**/*.java"/>
+			</fileset>
+			<fileset dir="src.ant-task">
+				<exclude name="**/*.java"/>
+			</fileset>
+			<fileset dir="src.github-core">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+
+		<copy todir="hpi/WEB-INF/classes">
+			<fileset dir="build">
+				<include name="**/*.class"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="hpi/WEB-INF/lib">
+			<fileset dir="lib">
+				<include name="*.jar"/>
+				<exclude name="*sources.jar"/>
+				<exclude name="stapler*.jar"/>
+				<exclude name="jenkins*.jar"/>
+				<exclude name="winstone*.jar"/>
+			</fileset>
+		</copy>
+		
+		<jar destfile="github-downloads-publisher.hpi" basedir="hpi">
+			<manifest>
+				<attribute name="Extension-Name" value="github-downloads-publisher"/>
+				<attribute name="Implementation-Title" value="github-downloads-publisher"/>
+				<attribute name="Implementation-Version" value="1.0"/>
+				<attribute name="Short-Name" value="github-downloads-publisher"/>
+				<attribute name="Long-Name" value="Github publisher to downloads section"/>
+				<attribute name="Url" value="https://github.com/wizecore/github-downloads-publisher"/>
+				<attribute name="Plugin-Version" value="1.0"/>
+				<attribute name="Hudson-Version" value="1.319"/>
+				<attribute name="Plugin-Developers" value=":huksley:"/>
+			</manifest>
+		</jar>
+	</target>
+</project>
