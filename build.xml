@@ -16,7 +16,6 @@
 		<javac target="1.6" destdir="build" classpathref="runtime.classpath">
 			<src path="src"/>
 			<src path="src.ant-task"/>
-			<src path="src.github-core"/>
 		</javac>			
 	</target>
 
@@ -32,9 +31,6 @@
 				<exclude name="**/*.java"/>
 			</fileset>
 			<fileset dir="src.ant-task">
-				<exclude name="**/*.java"/>
-			</fileset>
-			<fileset dir="src.github-core">
 				<exclude name="**/*.java"/>
 			</fileset>
 		</copy>
