@@ -105,4 +105,12 @@ public class GithubDownloadsPubs extends Recorder {
             return true;
         }
     }
+
+	public String getUsername() {
+		return username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
 }
